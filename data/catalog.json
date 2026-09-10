@@ -6,7 +6,7 @@
     "category": "Chandeliers",
     "price": "From $188",
     "description": "A warm brass linear statement with hand-blown opal globes.",
-    "image": "/images/lumenhaus-aster-chandelier.png",
+    "image": "/images/lumenhaus-aster-chandelier.webp",
     "featured": true,
     "status": "Published"
   },
@@ -17,7 +17,7 @@
     "category": "Pendant Lights",
     "price": "From $62",
     "description": "Smoked glass suspended from a slender graphite stem.",
-    "image": "/images/lumenhaus-smoked-glass-pendants.png",
+    "image": "/images/lumenhaus-smoked-glass-pendants.webp",
     "featured": true,
     "status": "Published"
   },
@@ -28,7 +28,7 @@
     "category": "Wall Lamps",
     "price": "From $54",
     "description": "Soft perimeter light for hospitality and residential projects.",
-    "image": "/images/lumenhaus-halo-wall-sconce.png",
+    "image": "/images/lumenhaus-halo-wall-sconce.webp",
     "featured": true,
     "status": "Published"
   },
@@ -39,7 +39,7 @@
     "category": "Table Lamps",
     "price": "From $79",
     "description": "A tactile linen and ceramic bedside companion.",
-    "image": "/images/lumenhaus-ceramic-table-lamp.png",
+    "image": "/images/lumenhaus-ceramic-table-lamp.webp",
     "featured": true,
     "status": "Published"
   },
@@ -50,7 +50,7 @@
     "category": "Floor Lamps",
     "price": "From $126",
     "description": "An architectural arc for lounges and reading corners.",
-    "image": "/images/lumenhaus-opal-floor-lamp.png",
+    "image": "/images/lumenhaus-opal-floor-lamp.webp",
     "featured": true,
     "status": "Published"
   },
@@ -61,7 +61,7 @@
     "category": "Ceiling Lights",
     "price": "From $71",
     "description": "Clean, diffused light with a low-profile silhouette.",
-    "image": "/images/lumenhaus-halo-wall-sconce.png",
+    "image": "/images/lumenhaus-halo-wall-sconce.webp",
     "featured": true,
     "status": "Published"
   },
@@ -72,7 +72,7 @@
     "category": "Chandeliers",
     "price": "From $240",
     "description": "A circular glass chandelier for lobby and dining projects.",
-    "image": "/images/lumenhaus-aster-chandelier.png",
+    "image": "/images/lumenhaus-aster-chandelier.webp",
     "featured": false,
     "status": "Published"
   },
@@ -83,7 +83,7 @@
     "category": "Chandeliers",
     "price": "From $310",
     "description": "Layered glass globes for tall interior spaces.",
-    "image": "/images/lumenhaus-aster-chandelier.png",
+    "image": "/images/lumenhaus-aster-chandelier.webp",
     "featured": false,
     "status": "Published"
   },
@@ -94,7 +94,7 @@
     "category": "Chandeliers",
     "price": "From $275",
     "description": "An elongated statement fixture with warm brass detail.",
-    "image": "/images/lumenhaus-aster-chandelier.png",
+    "image": "/images/lumenhaus-aster-chandelier.webp",
     "featured": false,
     "status": "Published"
   },
@@ -105,7 +105,7 @@
     "category": "Chandeliers",
     "price": "From $220",
     "description": "A balanced multi-light linear composition.",
-    "image": "/images/lumenhaus-aster-chandelier.png",
+    "image": "/images/lumenhaus-aster-chandelier.webp",
     "featured": false,
     "status": "Published"
   },
@@ -116,7 +116,7 @@
     "category": "Chandeliers",
     "price": "From $260",
     "description": "Soft globe lighting for residential and hospitality schemes.",
-    "image": "/images/lumenhaus-aster-chandelier.png",
+    "image": "/images/lumenhaus-aster-chandelier.webp",
     "featured": false,
     "status": "Published"
   },
@@ -127,7 +127,7 @@
     "category": "Chandeliers",
     "price": "From $285",
     "description": "Fine vertical lines and opal glass shades.",
-    "image": "/images/lumenhaus-aster-chandelier.png",
+    "image": "/images/lumenhaus-aster-chandelier.webp",
     "featured": false,
     "status": "Published"
   },
@@ -138,7 +138,7 @@
     "category": "Chandeliers",
     "price": "From $335",
     "description": "A warm metallic centerpiece for project interiors.",
-    "image": "/images/lumenhaus-aster-chandelier.png",
+    "image": "/images/lumenhaus-aster-chandelier.webp",
     "featured": false,
     "status": "Published"
   },
@@ -149,7 +149,7 @@
     "category": "Chandeliers",
     "price": "From $198",
     "description": "An airy composition with adjustable suspension.",
-    "image": "/images/lumenhaus-aster-chandelier.png",
+    "image": "/images/lumenhaus-aster-chandelier.webp",
     "featured": false,
     "status": "Published"
   },
@@ -160,7 +160,7 @@
     "category": "Chandeliers",
     "price": "From $295",
     "description": "Decorative glass forms for feature lighting.",
-    "image": "/images/lumenhaus-aster-chandelier.png",
+    "image": "/images/lumenhaus-aster-chandelier.webp",
     "featured": false,
     "status": "Published"
   },
@@ -171,7 +171,7 @@
     "category": "Chandeliers",
     "price": "From $265",
     "description": "A geometric fixture for modern project spaces.",
-    "image": "/images/lumenhaus-aster-chandelier.png",
+    "image": "/images/lumenhaus-aster-chandelier.webp",
     "featured": false,
     "status": "Published"
   },
@@ -182,7 +182,7 @@
     "category": "Chandeliers",
     "price": "From $230",
     "description": "Quiet, sculptural ambient lighting.",
-    "image": "/images/lumenhaus-aster-chandelier.png",
+    "image": "/images/lumenhaus-aster-chandelier.webp",
     "featured": false,
     "status": "Published"
   },
@@ -193,7 +193,7 @@
     "category": "Chandeliers",
     "price": "From $345",
     "description": "A dramatic glass and graphite chandelier.",
-    "image": "/images/lumenhaus-aster-chandelier.png",
+    "image": "/images/lumenhaus-aster-chandelier.webp",
     "featured": false,
     "status": "Published"
   },
@@ -204,7 +204,7 @@
     "category": "Chandeliers",
     "price": "From $215",
     "description": "Compact decorative chandelier for coordinated rooms.",
-    "image": "/images/lumenhaus-aster-chandelier.png",
+    "image": "/images/lumenhaus-aster-chandelier.webp",
     "featured": false,
     "status": "Published"
   },
@@ -215,7 +215,7 @@
     "category": "Chandeliers",
     "price": "From $250",
     "description": "A suspended glass statement in a light frame.",
-    "image": "/images/lumenhaus-aster-chandelier.png",
+    "image": "/images/lumenhaus-aster-chandelier.webp",
     "featured": false,
     "status": "Published"
   },
@@ -226,7 +226,7 @@
     "category": "Pendant Lights",
     "price": "From $58",
     "description": "A single decorative pendant for hospitality projects.",
-    "image": "/images/lumenhaus-smoked-glass-pendants.png",
+    "image": "/images/lumenhaus-smoked-glass-pendants.webp",
     "featured": false,
     "status": "Published"
   },
@@ -237,7 +237,7 @@
     "category": "Pendant Lights",
     "price": "From $69",
     "description": "A slim tube pendant with warm ambient light.",
-    "image": "/images/lumenhaus-smoked-glass-pendants.png",
+    "image": "/images/lumenhaus-smoked-glass-pendants.webp",
     "featured": false,
     "status": "Published"
   },
@@ -248,7 +248,7 @@
     "category": "Pendant Lights",
     "price": "From $75",
     "description": "Glass drop pendant for bars and dining areas.",
-    "image": "/images/lumenhaus-smoked-glass-pendants.png",
+    "image": "/images/lumenhaus-smoked-glass-pendants.webp",
     "featured": false,
     "status": "Published"
   },
@@ -259,7 +259,7 @@
     "category": "Pendant Lights",
     "price": "From $81",
     "description": "Vertical decorative lighting for high ceilings.",
-    "image": "/images/lumenhaus-smoked-glass-pendants.png",
+    "image": "/images/lumenhaus-smoked-glass-pendants.webp",
     "featured": false,
     "status": "Published"
   },
@@ -270,7 +270,7 @@
     "category": "Pendant Lights",
     "price": "From $92",
     "description": "A coordinated pendant light collection.",
-    "image": "/images/lumenhaus-smoked-glass-pendants.png",
+    "image": "/images/lumenhaus-smoked-glass-pendants.webp",
     "featured": false,
     "status": "Published"
   },
@@ -281,7 +281,7 @@
     "category": "Wall Lamps",
     "price": "From $66",
     "description": "Two-globe decorative wall lamp for rooms and corridors.",
-    "image": "/images/lumenhaus-halo-wall-sconce.png",
+    "image": "/images/lumenhaus-halo-wall-sconce.webp",
     "featured": false,
     "status": "Published"
   },
@@ -292,7 +292,7 @@
     "category": "Wall Lamps",
     "price": "From $73",
     "description": "Tall wall fixture with warm diffused light.",
-    "image": "/images/lumenhaus-halo-wall-sconce.png",
+    "image": "/images/lumenhaus-halo-wall-sconce.webp",
     "featured": false,
     "status": "Published"
   },
@@ -303,7 +303,7 @@
     "category": "Wall Lamps",
     "price": "From $61",
     "description": "A compact sconce for coordinated lighting schemes.",
-    "image": "/images/lumenhaus-halo-wall-sconce.png",
+    "image": "/images/lumenhaus-halo-wall-sconce.webp",
     "featured": false,
     "status": "Published"
   },
@@ -314,7 +314,7 @@
     "category": "Wall Lamps",
     "price": "From $78",
     "description": "Architectural accent lighting for hospitality interiors.",
-    "image": "/images/lumenhaus-halo-wall-sconce.png",
+    "image": "/images/lumenhaus-halo-wall-sconce.webp",
     "featured": false,
     "status": "Published"
   },
@@ -325,7 +325,7 @@
     "category": "Wall Lamps",
     "price": "From $70",
     "description": "Soft glass wall lighting for bedroom and lounge projects.",
-    "image": "/images/lumenhaus-halo-wall-sconce.png",
+    "image": "/images/lumenhaus-halo-wall-sconce.webp",
     "featured": false,
     "status": "Published"
   },
@@ -336,7 +336,7 @@
     "category": "Table Lamps",
     "price": "From $88",
     "description": "A ceramic table light for hotel and residential rooms.",
-    "image": "/images/lumenhaus-ceramic-table-lamp.png",
+    "image": "/images/lumenhaus-ceramic-table-lamp.webp",
     "featured": false,
     "status": "Published"
   },
@@ -347,7 +347,7 @@
     "category": "Table Lamps",
     "price": "From $94",
     "description": "A decorative table lamp with calm, diffuse light.",
-    "image": "/images/lumenhaus-ceramic-table-lamp.png",
+    "image": "/images/lumenhaus-ceramic-table-lamp.webp",
     "featured": false,
     "status": "Published"
   },
@@ -358,7 +358,7 @@
     "category": "Floor Lamps",
     "price": "From $142",
     "description": "An arc floor lamp for lounge and suite projects.",
-    "image": "/images/lumenhaus-opal-floor-lamp.png",
+    "image": "/images/lumenhaus-opal-floor-lamp.webp",
     "featured": false,
     "status": "Published"
   },
@@ -369,7 +369,7 @@
     "category": "Floor Lamps",
     "price": "From $135",
     "description": "A focused decorative reading floor lamp.",
-    "image": "/images/lumenhaus-opal-floor-lamp.png",
+    "image": "/images/lumenhaus-opal-floor-lamp.webp",
     "featured": false,
     "status": "Published"
   },
@@ -380,8 +380,9 @@
     "category": "Ceiling Lights",
     "price": "From $76",
     "description": "A rounded flush mount for compact room lighting.",
-    "image": "/images/lumenhaus-halo-wall-sconce.png",
+    "image": "/images/lumenhaus-halo-wall-sconce.webp",
     "featured": false,
     "status": "Published"
   }
 ]
+

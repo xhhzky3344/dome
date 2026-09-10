@@ -5,7 +5,7 @@ import { FormEvent, useEffect, useState } from "react";
 type Product = { id: string; name: string; nameZh?: string; model: string; category: string; price: string; description: string; descriptionZh?: string; image: string; featured: boolean; status: string };
 type Category = { id: string; name: string; published: boolean };
 const initialCategories = ["Chandeliers", "Pendant Lights", "Wall Lamps", "Table Lamps", "Floor Lamps", "Ceiling Lights"];
-const blank = { name: "", nameZh: "", model: "", category: "Chandeliers", price: "", description: "", descriptionZh: "", image: "/images/lumenhaus-aster-chandelier.png", featured: false, status: "Draft" };
+const blank = { name: "", nameZh: "", model: "", category: "Chandeliers", price: "", description: "", descriptionZh: "", image: "/images/lumenhaus-aster-chandelier.webp", featured: false, status: "Draft" };
 
 export default function ProductManager() {
   const [products, setProducts] = useState<Product[]>([]); const [categories, setCategories] = useState(initialCategories); const [editing, setEditing] = useState<Partial<Product> | null>(null); const [notice, setNotice] = useState("");

@@ -20,7 +20,7 @@ type Product = {
 
 const fallbackSlide: HeroSlide = {
   id: "fallback",
-  image: "/images/lumenhaus-panorama-hero-v2.png",
+  image: "/images/lumenhaus-panorama-hero-v2.webp",
   eyebrow: "DECORATIVE LIGHTING · B2B PROJECT SUPPLY",
   eyebrowZh: "装饰灯具 · B2B 项目供应",
   title: "Aster glass pendants\nfor generous,\narchitectural interiors.",

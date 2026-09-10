@@ -13,7 +13,7 @@
   "heroSlides": [
     {
       "id": "aster",
-      "image": "/images/lumenhaus-panorama-hero-v2.png",
+      "image": "/images/lumenhaus-panorama-hero-v2.webp",
       "eyebrow": "DECORATIVE LIGHTING · B2B PROJECT SUPPLY",
       "eyebrowZh": "装饰灯具 · B2B 项目供应",
       "title": "Aster glass pendants\nfor generous,\narchitectural interiors.",
@@ -30,7 +30,7 @@
     },
     {
       "id": "halo",
-      "image": "/images/lumenhaus-lobby-hero.png",
+      "image": "/images/lumenhaus-lobby-hero.webp",
       "eyebrow": "HOSPITALITY COLLECTION · WARM MATERIALS",
       "eyebrowZh": "酒店空间系列 · 温润材质",
       "title": "Light that gives\na welcome its\nown character.",
@@ -47,7 +47,7 @@
     },
     {
       "id": "smoked",
-      "image": "/images/lumenhaus-smoked-glass-pendants.png",
+      "image": "/images/lumenhaus-smoked-glass-pendants.webp",
       "eyebrow": "BESPOKE DEVELOPMENT · FROM BRIEF TO PRODUCTION",
       "eyebrowZh": "定制开发 · 从简报到量产",
       "title": "A material idea,\nmade ready for\nreal projects.",
