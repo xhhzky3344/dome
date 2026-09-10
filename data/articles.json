@@ -1,0 +1,32 @@
+[
+  {
+    "id": "guide-to-sourcing",
+    "title": "How to prepare a decorative lighting sourcing brief",
+    "titleZh": "如何准备装饰灯具采购需求",
+    "category": "Lighting Buying Guides",
+    "excerpt": "The information that helps a factory assess material, structure, lead time and quotation accurately.",
+    "published": "2026-09-01",
+    "author": "Lumenhaus Studio",
+    "status": "Published"
+  },
+  {
+    "id": "custom-lighting-checklist",
+    "title": "A practical checklist for custom lighting development",
+    "titleZh": "定制灯具开发的实用清单",
+    "category": "Custom Lighting",
+    "excerpt": "From reference image to production: details that reduce revisions and improve quotation quality.",
+    "published": "2026-08-20",
+    "author": "Lumenhaus Studio",
+    "status": "Published"
+  },
+  {
+    "id": "hotel-lighting",
+    "title": "Coordinating decorative lighting for hotel projects",
+    "titleZh": "酒店项目装饰灯具的协调方法",
+    "category": "Hotel & Project Lighting",
+    "excerpt": "How to align feature fixtures, wall lamps and ambient lighting across a hospitality project.",
+    "published": "2026-08-05",
+    "author": "Lumenhaus Studio",
+    "status": "Published"
+  }
+]

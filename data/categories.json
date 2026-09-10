@@ -1,0 +1,8 @@
+[
+  {"id":"cat-1","name":"Chandeliers","slug":"chandeliers","nameZh":"吊灯","description":"Statement fixtures for hospitality and residential projects.","published":true},
+  {"id":"cat-2","name":"Pendant Lights","slug":"pendant-lights","nameZh":"吊灯系列","description":"Suspended decorative lighting for commercial interiors.","published":true},
+  {"id":"cat-3","name":"Wall Lamps","slug":"wall-lamps","nameZh":"壁灯","description":"Decorative wall lighting for rooms and corridors.","published":true},
+  {"id":"cat-4","name":"Table Lamps","slug":"table-lamps","nameZh":"台灯","description":"Ambient portable fixtures for accommodation projects.","published":true},
+  {"id":"cat-5","name":"Floor Lamps","slug":"floor-lamps","nameZh":"落地灯","description":"Freestanding feature lighting.","published":true},
+  {"id":"cat-6","name":"Ceiling Lights","slug":"ceiling-lights","nameZh":"吸顶灯","description":"Compact ceiling-mounted lighting.","published":true}
+]

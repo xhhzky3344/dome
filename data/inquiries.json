@@ -1,0 +1,29 @@
+[
+  {
+    "name": "l2tp01",
+    "email": "2280780124@qq.com",
+    "company": "",
+    "message": "sadads",
+    "id": "7b3238c1-95f7-4cd6-ba10-d56845e9eabc",
+    "status": "New",
+    "createdAt": "2026-09-10T04:59:46.525Z"
+  },
+  {
+    "id": "inq-001",
+    "name": "Maya Chen",
+    "email": "maya@atelier-demo.com",
+    "company": "Atelier North",
+    "message": "Looking for pendant lights for a boutique hotel lobby, 48 units.",
+    "status": "New",
+    "createdAt": "2026-09-10T09:20:00Z"
+  },
+  {
+    "id": "inq-002",
+    "name": "Oliver Green",
+    "email": "oliver@hotel-demo.com",
+    "company": "Harbour House",
+    "message": "Please send a finish sample and lead time for LH-101.",
+    "status": "Quoted",
+    "createdAt": "2026-09-09T12:15:00Z"
+  }
+]
