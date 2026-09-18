@@ -352,21 +352,46 @@ body { background: var(--lh-cream); }
 .lumenhaus-home .chips button.active { background: var(--lh-ink) !important; color: var(--lh-cream) !important; }
 .lumenhaus-home .grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 48px 20px !important; }
 .lumenhaus-home .product { border-top: 0; padding-top: 0; }
-.lumenhaus-home .product .photo,
-.lumenhaus-home .product:nth-child(3n + 2) .photo {
+.lumenhaus-home .product {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.lumenhaus-home .product .photo {
   height: auto !important;
   aspect-ratio: 4 / 5;
+  flex: none;
   border-radius: 0 !important;
   background: #ddd6c9;
 }
-.lumenhaus-home .product:nth-child(3n + 2) .photo { aspect-ratio: 5 / 6; }
-.lumenhaus-home .product:nth-child(3n) .photo { aspect-ratio: 1 / 1; }
 .lumenhaus-home .product .photo img { filter: saturate(.68) contrast(1.02); transition: transform 420ms cubic-bezier(.2, .7, .2, 1), filter 420ms ease; }
 .lumenhaus-home .product:hover .photo img { filter: saturate(.82) contrast(1.04); transform: scale(1.035); }
 .lumenhaus-home .product .photo::after { border: 0 !important; box-shadow: inset 0 0 0 1px rgba(25, 24, 23, .08); }
-.lumenhaus-home .product > p { margin: 16px 0 7px; color: var(--lh-gold) !important; font-size: 9px !important; letter-spacing: .12em; }
-.lumenhaus-home .product h3 { margin: 0 0 8px !important; font-size: 1.2rem !important; line-height: 1.15 !important; }
-.lumenhaus-home .product small { padding-top: 8px; border-top: 1px solid var(--lh-rule); color: var(--lh-muted) !important; font-size: 9px !important; letter-spacing: .04em; }
+.lumenhaus-home .product > p {
+  min-height: 11px;
+  margin: 16px 0 7px;
+  color: var(--lh-gold) !important;
+  font-size: 9px !important;
+  letter-spacing: .12em;
+}
+.lumenhaus-home .product h3 {
+  min-height: 2.3em;
+  margin: 0 0 8px !important;
+  font-size: 1.2rem !important;
+  line-height: 1.15 !important;
+}
+.lumenhaus-home .product small {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  min-height: 26px;
+  margin-top: auto;
+  padding-top: 8px;
+  border-top: 1px solid var(--lh-rule);
+  color: var(--lh-muted) !important;
+  font-size: 9px !important;
+  letter-spacing: .04em;
+}
 
 .lumenhaus-home .custom,
 .lumenhaus-home .story,
@@ -416,9 +441,7 @@ body { background: var(--lh-cream); }
   .lumenhaus-home .catalogue .section-heading h2 { font-size: clamp(2.8rem, 13vw, 4rem) !important; }
   .lumenhaus-home .filters { margin-top: 42px !important; }
   .lumenhaus-home .grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 38px 12px !important; }
-  .lumenhaus-home .product .photo,
-  .lumenhaus-home .product:nth-child(3n + 2) .photo,
-  .lumenhaus-home .product:nth-child(3n) .photo { aspect-ratio: 4 / 5; }
+  .lumenhaus-home .product .photo { aspect-ratio: 4 / 5; }
   .lumenhaus-home .product h3 { font-size: 1.05rem !important; }
   .lumenhaus-home .product small { display: block; line-height: 1.5; }
   .lumenhaus-home .custom,
@@ -436,9 +459,7 @@ body { background: var(--lh-cream); }
   .lumenhaus-home .hero-copy .hero-actions { width: 100%; flex-direction: column; align-items: stretch; }
   .lumenhaus-home .hero-copy .hero-actions a { width: 100%; }
   .lumenhaus-home .grid { grid-template-columns: 1fr !important; gap: 42px !important; }
-  .lumenhaus-home .product .photo,
-  .lumenhaus-home .product:nth-child(3n + 2) .photo,
-  .lumenhaus-home .product:nth-child(3n) .photo { aspect-ratio: 5 / 6; }
+  .lumenhaus-home .product .photo { aspect-ratio: 4 / 5; }
 }
 .navigation-pending:empty { display: none; }
 .product-highlights{padding:0;margin:24px 0;list-style:none;display:grid;gap:9px;font-size:12px;line-height:1.5}.product-highlights li{display:flex;gap:10px}.product-highlights li:before{content:"＋";color:var(--gold);font:14px 'DM Mono';line-height:1}
