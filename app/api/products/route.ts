@@ -1,28 +1,66 @@
-import { NextResponse } from "next/server";
-import { promises as fs } from "node:fs";
-import path from "node:path";
-import { forbidden, isAdmin } from "../../../lib/auth";
-
-const file = path.join(process.cwd(), "data", "catalog.json");
-async function read() { return JSON.parse(await fs.readFile(file, "utf8")); }
-async function write(data: unknown) { await fs.writeFile(file, JSON.stringify(data, null, 2)); }
-
-export async function GET() { const products = await read(); return NextResponse.json(await isAdmin() ? products : products.filter((product: { status: string }) => product.status === "Published")); }
-export async function POST(request: Request) {
-  if (!await isAdmin()) return forbidden();
-  const product = await request.json(); const products = await read();
-  const entry = { ...product, id: crypto.randomUUID(), status: product.status || "Draft", featured: Boolean(product.featured) };
-  products.unshift(entry); await write(products); return NextResponse.json(entry, { status: 201 });
+import { requireAdmin, isAdmin } from "../../../lib/auth";
+import { db, get, remove, transaction } from "../../../lib/db";
+import {
+  api,
+  body,
+  paginate,
+  requireValue,
+  sameOrigin,
+  str,
+} from "../../../lib/http";
+import { products, saveProduct } from "../../../lib/products";
+export function GET(request: Request) {
+  return api(async () => {
+    const admin = await isAdmin();
+    const q = new URL(request.url).searchParams;
+    let rows = products().filter((p) => admin || p.status === "Published");
+    if (q.get("id")) {
+      const p = rows.find((p) => p.id === q.get("id"));
+      requireValue(p, "商品不存在", 404);
+      return p;
+    }
+    if (q.get("q"))
+      rows = rows.filter((p) =>
+        `${p.name} ${p.nameZh} ${p.model}`
+          .toLowerCase()
+          .includes(q.get("q")!.toLowerCase()),
+      );
+    for (const key of ["category", "status"])
+      if (q.get(key)) rows = rows.filter((p) => p[key] === q.get(key));
+    if (q.get("space"))
+      rows = rows.filter((p) =>
+        ((p.spaces as string[]) || []).includes(q.get("space")!),
+      );
+    if (q.get("featured"))
+      rows = rows.filter((p) => p.featured === (q.get("featured") === "true"));
+    return paginate(rows, request);
+  });
 }
-export async function PUT(request: Request) {
-  if (!await isAdmin()) return forbidden();
-  const product = await request.json(); const products = await read();
-  const index = products.findIndex((item: { id: string }) => item.id === product.id);
-  if (index < 0) return NextResponse.json({ error: "Not found" }, { status: 404 });
-  products[index] = product; await write(products); return NextResponse.json(product);
+export function POST(request: Request) {
+  return api(async () => {
+    sameOrigin(request);
+    await requireAdmin();
+    return saveProduct(await body(request), true);
+  });
 }
-export async function DELETE(request: Request) {
-  if (!await isAdmin()) return forbidden();
-  const { id } = await request.json(); const products = await read();
-  await write(products.filter((item: { id: string }) => item.id !== id)); return new NextResponse(null, { status: 204 });
+export function PUT(request: Request) {
+  return api(async () => {
+    sameOrigin(request);
+    await requireAdmin();
+    return saveProduct(await body(request), false);
+  });
+}
+export function DELETE(request: Request) {
+  return api(async () => {
+    sameOrigin(request);
+    await requireAdmin();
+    const input = await body(request);
+    const id = str(input.id, "商品 ID");
+    return transaction(() => {
+      requireValue(get("products", id), "商品不存在", 404);
+      db().prepare("UPDATE variants SET active=0 WHERE product_id=?").run(id);
+      remove("products", id);
+      return { ok: true };
+    });
+  });
 }

@@ -1,31 +1,81 @@
-import { NextResponse } from "next/server";
 import { promises as fs } from "node:fs";
 import path from "node:path";
-import { forbidden, isAdmin } from "../../../lib/auth";
-
-const allowed = new Set(["image/jpeg", "image/png", "image/webp", "image/gif"]);
-const uploadDirectory = path.join(process.cwd(), "public", "uploads");
-
-export async function GET() {
-  if (!await isAdmin()) return forbidden();
-  await fs.mkdir(uploadDirectory, { recursive: true });
-  const files = await fs.readdir(uploadDirectory, { withFileTypes: true });
-  const media = await Promise.all(files.filter((entry) => entry.isFile()).map(async (entry) => {
-    const stat = await fs.stat(path.join(uploadDirectory, entry.name));
-    return { name: entry.name, url: `/uploads/${entry.name}`, size: stat.size, updatedAt: stat.mtime.toISOString() };
-  }));
-  return NextResponse.json(media.sort((a, b) => b.updatedAt.localeCompare(a.updatedAt)));
+import { randomUUID } from "node:crypto";
+import { requireAdmin } from "../../../lib/auth";
+import {
+  api,
+  rateLimit,
+  readBytes,
+  requireValue,
+  sameOrigin,
+} from "../../../lib/http";
+const directory =
+  process.env.UPLOAD_DIR || path.join(process.cwd(), "public", "uploads");
+export function GET() {
+  return api(async () => {
+    await requireAdmin();
+    await fs.mkdir(directory, { recursive: true });
+    const entries = await fs.readdir(directory, { withFileTypes: true });
+    return Promise.all(
+      entries
+        .filter((x) => x.isFile() && /\.(png|jpg|jpeg|webp|gif)$/i.test(x.name))
+        .map(async (x) => {
+          const s = await fs.stat(path.join(directory, x.name));
+          return {
+            name: x.name,
+            url: `/uploads/${x.name}`,
+            size: s.size,
+            updatedAt: s.mtime.toISOString(),
+          };
+        }),
+    );
+  });
 }
-
-export async function POST(request: Request) {
-  if (!await isAdmin()) return forbidden();
-  const data = await request.formData(); const source = data.get("file");
-  if (!(source instanceof File) || !source.size) return NextResponse.json({ error: "Choose an image file." }, { status: 400 });
-  if (!allowed.has(source.type)) return NextResponse.json({ error: "Only JPG, PNG, WebP and GIF images are supported." }, { status: 400 });
-  if (source.size > 5 * 1024 * 1024) return NextResponse.json({ error: "Images must be 5 MB or smaller." }, { status: 400 });
-  await fs.mkdir(uploadDirectory, { recursive: true });
-  const extension = path.extname(source.name).toLowerCase() || ".png";
-  const filename = `${Date.now()}-${crypto.randomUUID().slice(0, 8)}${extension}`;
-  await fs.writeFile(path.join(uploadDirectory, filename), Buffer.from(await source.arrayBuffer()));
-  return NextResponse.json({ name: filename, url: `/uploads/${filename}`, size: source.size, updatedAt: new Date().toISOString() }, { status: 201 });
+export function POST(request: Request) {
+  return api(async () => {
+    sameOrigin(request);
+    await requireAdmin();
+    rateLimit(request, "upload", 20);
+    const bytes = await readBytes(request, 6 * 1024 * 1024);
+    const form = await new Response(bytes, {
+      headers: { "Content-Type": request.headers.get("content-type") || "" },
+    }).formData();
+    const file = form.get("file");
+    requireValue(file instanceof File && file.size > 0, "请选择图片");
+    requireValue(file.size <= 5 * 1024 * 1024, "图片不能超过 5 MB", 413);
+    const data = Buffer.from(await file.arrayBuffer());
+    let extension = "",
+      type = "";
+    if (
+      data.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]))
+    ) {
+      extension = "png";
+      type = "image/png";
+    } else if (data[0] === 255 && data[1] === 216 && data[2] === 255) {
+      extension = "jpg";
+      type = "image/jpeg";
+    } else if (["GIF87a", "GIF89a"].includes(data.subarray(0, 6).toString())) {
+      extension = "gif";
+      type = "image/gif";
+    } else if (
+      data.subarray(0, 4).toString() === "RIFF" &&
+      data.subarray(8, 12).toString() === "WEBP"
+    ) {
+      extension = "webp";
+      type = "image/webp";
+    }
+    requireValue(
+      extension && type === file.type,
+      "仅支持文件内容匹配的 JPG、PNG、WebP、GIF 图片",
+    );
+    await fs.mkdir(directory, { recursive: true });
+    const name = `${randomUUID()}.${extension}`;
+    await fs.writeFile(path.join(directory, name), data, { flag: "wx" });
+    return {
+      name,
+      url: `/uploads/${name}`,
+      size: file.size,
+      updatedAt: new Date().toISOString(),
+    };
+  });
 }

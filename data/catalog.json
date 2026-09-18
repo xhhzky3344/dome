@@ -8,7 +8,9 @@
     "description": "A warm brass linear statement with hand-blown opal globes.",
     "image": "/images/lumenhaus-aster-chandelier.webp",
     "featured": true,
-    "status": "Published"
+    "status": "Published",
+    "nameZh": "Aster 线形吊灯",
+    "descriptionZh": "暖黄铜色线形灯体，搭配手工吹制乳白玻璃球。"
   },
   {
     "id": "lh-205",
@@ -19,7 +21,9 @@
     "description": "Smoked glass suspended from a slender graphite stem.",
     "image": "/images/lumenhaus-smoked-glass-pendants.webp",
     "featured": true,
-    "status": "Published"
+    "status": "Published",
+    "nameZh": "Nera 玻璃吊灯",
+    "descriptionZh": "烟灰色玻璃灯罩，悬挂于纤细的石墨色灯杆。"
   },
   {
     "id": "lh-314",
@@ -30,7 +34,9 @@
     "description": "Soft perimeter light for hospitality and residential projects.",
     "image": "/images/lumenhaus-halo-wall-sconce.webp",
     "featured": true,
-    "status": "Published"
+    "status": "Published",
+    "nameZh": "Halo 壁灯",
+    "descriptionZh": "柔和的轮廓光，适合酒店和住宅项目。"
   },
   {
     "id": "lh-412",
@@ -41,7 +47,9 @@
     "description": "A tactile linen and ceramic bedside companion.",
     "image": "/images/lumenhaus-ceramic-table-lamp.webp",
     "featured": true,
-    "status": "Published"
+    "status": "Published",
+    "nameZh": "Mori 氛围台灯",
+    "descriptionZh": "亚麻与陶瓷的细腻质感，为床头带来柔和光线。"
   },
   {
     "id": "lh-508",
@@ -52,7 +60,9 @@
     "description": "An architectural arc for lounges and reading corners.",
     "image": "/images/lumenhaus-opal-floor-lamp.webp",
     "featured": true,
-    "status": "Published"
+    "status": "Published",
+    "nameZh": "Arc 弧形落地灯",
+    "descriptionZh": "富有建筑感的弧线，适合休息区与阅读角。"
   },
   {
     "id": "lh-603",
@@ -63,7 +73,9 @@
     "description": "Clean, diffused light with a low-profile silhouette.",
     "image": "/images/lumenhaus-halo-wall-sconce.webp",
     "featured": true,
-    "status": "Published"
+    "status": "Published",
+    "nameZh": "Cove 吸顶灯",
+    "descriptionZh": "低矮简洁的外形，提供均匀柔和的照明。"
   },
   {
     "id": "lh-102",
@@ -74,7 +86,9 @@
     "description": "A circular glass chandelier for lobby and dining projects.",
     "image": "/images/lumenhaus-aster-chandelier.webp",
     "featured": false,
-    "status": "Published"
+    "status": "Published",
+    "nameZh": "Solenne 环形吊灯",
+    "descriptionZh": "环形玻璃吊灯，适合大堂与餐饮空间。"
   },
   {
     "id": "lh-103",
@@ -85,7 +99,9 @@
     "description": "Layered glass globes for tall interior spaces.",
     "image": "/images/lumenhaus-aster-chandelier.webp",
     "featured": false,
-    "status": "Published"
+    "status": "Published",
+    "nameZh": "Vela 组合吊灯",
+    "descriptionZh": "层叠玻璃球造型，适合挑高室内空间。"
   },
   {
     "id": "lh-104",
@@ -96,7 +112,9 @@
     "description": "An elongated statement fixture with warm brass detail.",
     "image": "/images/lumenhaus-aster-chandelier.webp",
     "featured": false,
-    "status": "Published"
+    "status": "Published",
+    "nameZh": "Lune 椭圆吊灯",
+    "descriptionZh": "修长的装饰灯体，搭配暖黄铜色细节。"
   },
   {
     "id": "lh-105",
@@ -107,7 +125,9 @@
     "description": "A balanced multi-light linear composition.",
     "image": "/images/lumenhaus-aster-chandelier.webp",
     "featured": false,
-    "status": "Published"
+    "status": "Published",
+    "nameZh": "Trove 线形吊灯",
+    "descriptionZh": "均衡排列的多光源线形设计。"
   },
   {
     "id": "lh-106",
@@ -118,7 +138,9 @@
     "description": "Soft globe lighting for residential and hospitality schemes.",
     "image": "/images/lumenhaus-aster-chandelier.webp",
     "featured": false,
-    "status": "Published"
+    "status": "Published",
+    "nameZh": "Oro 球形吊灯",
+    "descriptionZh": "柔和的球形照明，适用于住宅和酒店空间。"
   },
   {
     "id": "lh-107",
@@ -129,7 +151,9 @@
     "description": "Fine vertical lines and opal glass shades.",
     "image": "/images/lumenhaus-aster-chandelier.webp",
     "featured": false,
-    "status": "Published"
+    "status": "Published",
+    "nameZh": "Reed 悬吊灯",
+    "descriptionZh": "纤细竖向线条与乳白玻璃灯罩相结合。"
   },
   {
     "id": "lh-108",
@@ -140,7 +164,9 @@
     "description": "A warm metallic centerpiece for project interiors.",
     "image": "/images/lumenhaus-aster-chandelier.webp",
     "featured": false,
-    "status": "Published"
+    "status": "Published",
+    "nameZh": "Atria 黄铜吊灯",
+    "descriptionZh": "温暖的金属质感，成为室内项目的视觉中心。"
   },
   {
     "id": "lh-109",
@@ -151,7 +177,9 @@
     "description": "An airy composition with adjustable suspension.",
     "image": "/images/lumenhaus-aster-chandelier.webp",
     "featured": false,
-    "status": "Published"
+    "status": "Published",
+    "nameZh": "Ciel 悬吊灯",
+    "descriptionZh": "轻盈通透的造型，悬挂高度可调。"
   },
   {
     "id": "lh-110",
@@ -162,7 +190,9 @@
     "description": "Decorative glass forms for feature lighting.",
     "image": "/images/lumenhaus-aster-chandelier.webp",
     "featured": false,
-    "status": "Published"
+    "status": "Published",
+    "nameZh": "Miro 玻璃吊灯",
+    "descriptionZh": "以装饰玻璃造型营造重点照明。"
   },
   {
     "id": "lh-111",
@@ -173,7 +203,9 @@
     "description": "A geometric fixture for modern project spaces.",
     "image": "/images/lumenhaus-aster-chandelier.webp",
     "featured": false,
-    "status": "Published"
+    "status": "Published",
+    "nameZh": "Lattice 格构吊灯",
+    "descriptionZh": "几何造型灯具，适合现代项目空间。"
   },
   {
     "id": "lh-112",
@@ -184,7 +216,9 @@
     "description": "Quiet, sculptural ambient lighting.",
     "image": "/images/lumenhaus-aster-chandelier.webp",
     "featured": false,
-    "status": "Published"
+    "status": "Published",
+    "nameZh": "Alba 吊灯",
+    "descriptionZh": "安静而富有雕塑感的氛围照明。"
   },
   {
     "id": "lh-113",
@@ -195,7 +229,9 @@
     "description": "A dramatic glass and graphite chandelier.",
     "image": "/images/lumenhaus-aster-chandelier.webp",
     "featured": false,
-    "status": "Published"
+    "status": "Published",
+    "nameZh": "Nocturne 吊灯",
+    "descriptionZh": "玻璃与石墨色搭配，营造鲜明的空间氛围。"
   },
   {
     "id": "lh-114",
@@ -206,7 +242,9 @@
     "description": "Compact decorative chandelier for coordinated rooms.",
     "image": "/images/lumenhaus-aster-chandelier.webp",
     "featured": false,
-    "status": "Published"
+    "status": "Published",
+    "nameZh": "Arlo 吊灯",
+    "descriptionZh": "紧凑的装饰吊灯，适合统一配置的房间。"
   },
   {
     "id": "lh-115",
@@ -217,7 +255,9 @@
     "description": "A suspended glass statement in a light frame.",
     "image": "/images/lumenhaus-aster-chandelier.webp",
     "featured": false,
-    "status": "Published"
+    "status": "Published",
+    "nameZh": "Kite 吊灯",
+    "descriptionZh": "轻盈框架中的悬挂玻璃造型。"
   },
   {
     "id": "lh-206",
@@ -228,7 +268,9 @@
     "description": "A single decorative pendant for hospitality projects.",
     "image": "/images/lumenhaus-smoked-glass-pendants.webp",
     "featured": false,
-    "status": "Published"
+    "status": "Published",
+    "nameZh": "Tala 单头吊灯",
+    "descriptionZh": "单头装饰吊灯，适用于酒店项目。"
   },
   {
     "id": "lh-207",
@@ -239,7 +281,9 @@
     "description": "A slim tube pendant with warm ambient light.",
     "image": "/images/lumenhaus-smoked-glass-pendants.webp",
     "featured": false,
-    "status": "Published"
+    "status": "Published",
+    "nameZh": "Basil 筒形吊灯",
+    "descriptionZh": "纤细筒形灯体，提供温暖的氛围光。"
   },
   {
     "id": "lh-208",
@@ -250,7 +294,9 @@
     "description": "Glass drop pendant for bars and dining areas.",
     "image": "/images/lumenhaus-smoked-glass-pendants.webp",
     "featured": false,
-    "status": "Published"
+    "status": "Published",
+    "nameZh": "Petra 水滴吊灯",
+    "descriptionZh": "玻璃水滴造型，适合酒吧与餐饮区域。"
   },
   {
     "id": "lh-209",
@@ -261,7 +307,9 @@
     "description": "Vertical decorative lighting for high ceilings.",
     "image": "/images/lumenhaus-smoked-glass-pendants.webp",
     "featured": false,
-    "status": "Published"
+    "status": "Published",
+    "nameZh": "Luma 竖向吊灯",
+    "descriptionZh": "适合高层高空间的竖向装饰照明。"
   },
   {
     "id": "lh-210",
@@ -272,7 +320,9 @@
     "description": "A coordinated pendant light collection.",
     "image": "/images/lumenhaus-smoked-glass-pendants.webp",
     "featured": false,
-    "status": "Published"
+    "status": "Published",
+    "nameZh": "Cora 吊灯系列",
+    "descriptionZh": "便于整体搭配的吊灯系列。"
   },
   {
     "id": "lh-315",
@@ -283,7 +333,9 @@
     "description": "Two-globe decorative wall lamp for rooms and corridors.",
     "image": "/images/lumenhaus-halo-wall-sconce.webp",
     "featured": false,
-    "status": "Published"
+    "status": "Published",
+    "nameZh": "Nila 双球壁灯",
+    "descriptionZh": "双玻璃球装饰壁灯，适合客房与走廊。"
   },
   {
     "id": "lh-316",
@@ -294,7 +346,9 @@
     "description": "Tall wall fixture with warm diffused light.",
     "image": "/images/lumenhaus-halo-wall-sconce.webp",
     "featured": false,
-    "status": "Published"
+    "status": "Published",
+    "nameZh": "Mora 竖向壁灯",
+    "descriptionZh": "修长壁灯，提供温暖柔和的漫射光。"
   },
   {
     "id": "lh-317",
@@ -305,7 +359,9 @@
     "description": "A compact sconce for coordinated lighting schemes.",
     "image": "/images/lumenhaus-halo-wall-sconce.webp",
     "featured": false,
-    "status": "Published"
+    "status": "Published",
+    "nameZh": "Pia 壁灯",
+    "descriptionZh": "紧凑的壁灯，便于整体照明搭配。"
   },
   {
     "id": "lh-318",
@@ -316,7 +372,9 @@
     "description": "Architectural accent lighting for hospitality interiors.",
     "image": "/images/lumenhaus-halo-wall-sconce.webp",
     "featured": false,
-    "status": "Published"
+    "status": "Published",
+    "nameZh": "Cato 装饰壁灯",
+    "descriptionZh": "为酒店室内空间提供建筑感重点照明。"
   },
   {
     "id": "lh-319",
@@ -327,7 +385,9 @@
     "description": "Soft glass wall lighting for bedroom and lounge projects.",
     "image": "/images/lumenhaus-halo-wall-sconce.webp",
     "featured": false,
-    "status": "Published"
+    "status": "Published",
+    "nameZh": "Eira 玻璃壁灯",
+    "descriptionZh": "柔和的玻璃壁灯，适用于卧室和休息区。"
   },
   {
     "id": "lh-413",
@@ -338,7 +398,9 @@
     "description": "A ceramic table light for hotel and residential rooms.",
     "image": "/images/lumenhaus-ceramic-table-lamp.webp",
     "featured": false,
-    "status": "Published"
+    "status": "Published",
+    "nameZh": "Rill 陶瓷台灯",
+    "descriptionZh": "陶瓷台灯，适合酒店与住宅房间。"
   },
   {
     "id": "lh-414",
@@ -349,7 +411,9 @@
     "description": "A decorative table lamp with calm, diffuse light.",
     "image": "/images/lumenhaus-ceramic-table-lamp.webp",
     "featured": false,
-    "status": "Published"
+    "status": "Published",
+    "nameZh": "Moss 台灯",
+    "descriptionZh": "以安静柔和的漫射光营造装饰氛围。"
   },
   {
     "id": "lh-509",
@@ -360,7 +424,9 @@
     "description": "An arc floor lamp for lounge and suite projects.",
     "image": "/images/lumenhaus-opal-floor-lamp.webp",
     "featured": false,
-    "status": "Published"
+    "status": "Published",
+    "nameZh": "Reno 弧形落地灯",
+    "descriptionZh": "适合休息区与套房项目的弧形落地灯。"
   },
   {
     "id": "lh-510",
@@ -371,7 +437,9 @@
     "description": "A focused decorative reading floor lamp.",
     "image": "/images/lumenhaus-opal-floor-lamp.webp",
     "featured": false,
-    "status": "Published"
+    "status": "Published",
+    "nameZh": "Sola 阅读落地灯",
+    "descriptionZh": "兼具装饰性与集中阅读光线的落地灯。"
   },
   {
     "id": "lh-604",
@@ -382,7 +450,9 @@
     "description": "A rounded flush mount for compact room lighting.",
     "image": "/images/lumenhaus-halo-wall-sconce.webp",
     "featured": false,
-    "status": "Published"
+    "status": "Published",
+    "nameZh": "Dome 吸顶灯",
+    "descriptionZh": "圆润的吸顶造型，适合紧凑房间照明。"
   }
 ]
 

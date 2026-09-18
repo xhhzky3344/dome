@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "smoke": "node scripts/smoke.mjs"
+    "smoke": "node scripts/smoke.mjs",
+    "test:backend": "node scripts/backend-test.mjs"
   },
   "dependencies": {
     "next": "16.3.4",
@@ -22,5 +23,8 @@
     "eslint-config-next": "16.3.4",
     "playwright": "^1.63.0",
     "typescript": "5.9.3"
+  },
+  "engines": {
+    "node": ">=24.12.0 <25"
   }
 }

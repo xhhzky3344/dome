@@ -1,0 +1,446 @@
+/* Storefront interaction refinements. Keep these rules scoped to public components. */
+.site-nav { --nav-text: #171716; color: var(--nav-text); gap: 16px; }
+.lumenhaus-home .site-nav { --nav-text: #f7f3eb; }
+.site-nav { background:#161616 !important; --nav-text:#f7f3eb; color:#f7f3eb !important; border-bottom:1px solid #ffffff1f !important; box-shadow:none !important; }
+.site-nav .brand, .site-nav nav a, .site-nav .language-toggle { color:#f7f3eb !important; }
+.site-nav .quote-button { background:#f4f1eb !important; color:#171716 !important; }
+body:has(.cms) .global-admin-actions { display:none; }
+.cms-logout { margin-top:12px !important; border-top:1px solid #393833 !important; color:#dfb9ad !important; }
+.site-nav .nav-search, .site-nav .nav-menu { color: var(--nav-text) !important; width:44px; height:44px; flex-shrink:0; align-items:center; justify-content:center; }
+.site-nav .nav-search { display:inline-flex; }
+.site-nav .language-toggle { min-width:44px; min-height:44px; white-space:nowrap; padding:0 6px; color:var(--nav-text); flex-shrink:0; }
+.site-nav .nav-actions { gap:4px; flex-shrink:0; }
+.site-nav .quote-button { display:inline-flex !important; align-items:center; justify-content:center; gap:8px; min-height:44px; white-space:nowrap; }
+.quote-count { min-width:20px; text-align:center; font:inherit; border:1px solid currentColor; border-radius:50%; }
+.site-nav .brand { min-height:44px; display:flex; align-items:center; white-space:nowrap; }
+.site-nav .brand small { top:32px !important; }
+.footer-main { display:grid; gap:10px; }
+.footer-contact, .footer-social { display:grid; gap:7px; align-content:center; }
+.footer-contact > span, .footer-social > span { color:var(--ink); font:700 10px/1.2 Manrope, "Noto Sans SC", Arial, sans-serif; }
+.footer-contact a, .footer-social a { color:var(--muted); font:10px/1.4 'DM Mono', monospace; }
+.footer-contact a:hover, .footer-social a:hover { color:var(--ink); text-decoration:underline; }
+.footer-copy { align-self:end; white-space:nowrap; }
+
+/* Keep the public header identical on the homepage and inner pages. */
+@media(min-width:761px) {
+  .site-nav { height:72px !important; min-height:72px !important; }
+  .site-nav .brand { font-size:15px !important; letter-spacing:.1em; }
+  .site-nav .brand small { font-size:9px !important; top:19px !important; }
+  .site-nav nav { gap:34px !important; }
+  .site-nav nav a { font:700 14px/1.2 Manrope, "Noto Sans SC", Arial, sans-serif !important; padding-block:18px; }
+  .site-nav .language-toggle, .site-nav .nav-search { font-size:12px !important; }
+  .site-nav .quote-button { min-height:44px !important; padding:0 22px !important; font-size:12px !important; }
+  .site-nav .brand { min-width:0; max-width:min(38vw, 420px); overflow:hidden; text-overflow:ellipsis; }
+}
+.icon-button { width:44px; height:44px; display:inline-flex; align-items:center; justify-content:center; background:transparent; color:inherit; flex-shrink:0; }
+.site-nav a:focus-visible, .site-nav button:focus-visible,
+.search-drawer :focus-visible, .product-gallery :focus-visible,
+.inquiry-form :focus-visible, .catalog-page :focus-visible,
+.quote-list-page :focus-visible, .product-page :focus-visible {
+  outline:3px solid #a96e18; outline-offset:4px;
+}
+.lumenhaus-home .site-nav :focus-visible { outline-color:#dfb661; }
+.search-drawer { box-sizing:border-box; border:0; color:var(--ink); width:100vw; max-width:none; height:100dvh; max-height:none; margin:0; }
+.search-drawer:not([open]), .gallery-lightbox:not([open]) { display:none; }
+.search-drawer > .icon-button { right:24px; top:20px; }
+.search-drawer > input { font-size:clamp(22px,4vw,46px); }
+.search-drawer .eyebrow, .search-hint { color:#765115; }
+.search-hint { font-size:14px; line-height:1.6; }
+.search-results small { font-size:12px; line-height:1.5; }
+.search-results b { font-size:20px; line-height:1.4; overflow-wrap:anywhere; }
+.search-results > a { min-height:76px; }
+.lumenhaus-home .hero-copy .hero-actions { display:flex; flex-wrap:wrap; gap:16px; max-width:100%; }
+.lumenhaus-home .hero-copy .hero-actions a { margin:0 !important; min-height:48px; display:inline-flex; align-items:center; justify-content:center; padding:12px 24px !important; }
+.lumenhaus-home .hero-carousel-controls button { width:44px; height:44px; }
+.archive-hero { padding:48px max(24px,calc((100vw - 1200px)/2)) 36px; }
+.archive-hero h1 { font-size:clamp(32px,4vw,54px); line-height:1.12; margin:16px 0 20px; }
+.archive-hero p { margin:0; font-size:16px; line-height:1.6; max-width:680px; }
+.archive-hero .eyebrow { color:#765115; }
+.archive-toolbar.interactive { position:sticky; top:0; z-index:6; background:#f1eee8; display:flex; flex-wrap:wrap; gap:16px; padding:16px max(24px,calc((100vw - 1200px)/2)); box-shadow:0 3px 10px #1717160a; }
+.archive-toolbar.interactive .archive-tabs { flex:1 1 680px; min-width:0; margin:0; gap:8px; }
+.archive-toolbar.interactive .archive-search { flex:1 1 220px; min-width:0; margin:0; min-height:44px; border:1px solid #8e877d; border-radius:6px; padding:8px 12px; color:#171716; }
+.archive-search input { width:100% !important; min-width:0; font-size:16px !important; }
+.mobile-category { display:none; }
+@media(min-width:761px) {
+  .archive-toolbar.interactive .archive-tabs { overflow:visible; flex-wrap:wrap; align-content:center; }
+  .archive-toolbar.interactive .archive-search { flex:0 1 260px; }
+}
+.archive-live { scroll-margin-top:170px; align-items:center; gap:16px; padding-top:28px; }
+.archive-live h2 { font-size:28px; margin:0; }
+.archive-live p { font-size:13px; line-height:1.5; flex-shrink:0; }
+.archive-card h3 { font-size:22px; line-height:1.35; margin:10px 0 12px; }
+.archive-card p { font-size:14px; line-height:1.7; }
+.archive-card small { font-size:12px; line-height:1.5; }
+.archive-card > div span { opacity:1; font-size:12px; }
+.archive-grid { row-gap:32px; }
+.catalog-pagination { display:flex; align-items:center; justify-content:center; gap:24px; margin-top:40px; font-size:14px; }
+.catalog-pagination button { min-width:100px; min-height:44px; padding:10px 16px; border:1px solid #8e877d; border-radius:6px; background:transparent; color:#171716; }
+.catalog-pagination button:disabled { opacity:.45; cursor:default; }
+.contact-page .contact-hero { min-height:0; padding-top:40px !important; padding-bottom:36px !important; }
+.contact-page .contact-hero h1 { max-width:18ch; font-size:clamp(34px,4vw,54px) !important; line-height:1.1 !important; }
+.contact-page .contact-hero .eyebrow { color:#765115; }
+.contact-form { scroll-margin-top:16px; padding-top:56px; padding-bottom:56px; gap:64px; align-items:start; }
+.contact-form h2 { margin:12px 0 24px; font-size:clamp(28px,3.5vw,44px); line-height:1.2; }
+.contact-form > div > p { font-size:16px; }
+.inquiry-form { display:grid; gap:20px !important; width:100%; }
+.inquiry-form .field-label { display:grid; gap:8px; margin:0; font:500 14px/1.5 Manrope,Arial,sans-serif; text-transform:none; letter-spacing:0; }
+.contact-form .field-label { color:#f1eee8; }
+.inquiry-form .field-label input, .inquiry-form .field-label textarea { box-sizing:border-box; width:100%; min-width:0; border:1px solid #817b71; background:#24231f; color:#f7f3eb; border-radius:6px; padding:12px 14px; font:400 16px/1.5 Manrope,Arial,sans-serif; }
+.inquiry-form .field-label input { min-height:48px; }
+.inquiry-form .field-label textarea { height:132px; min-height:120px; resize:vertical; }
+.inquiry-form input::placeholder, .inquiry-form textarea::placeholder { color:#c6c0b5; opacity:1; }
+.inquiry-form .form-hint { margin:0; font:400 13px/1.5 Manrope,Arial,sans-serif; color:inherit; }
+.inquiry-form .consent { display:flex; gap:12px; align-items:flex-start; font:400 13px/1.6 Manrope,Arial,sans-serif; padding:8px 0; cursor:pointer; }
+.inquiry-form .consent input { flex:0 0 20px; width:20px; height:20px; min-height:20px !important; margin:0; padding:0 !important; accent-color:#d6a955; }
+.inquiry-form button.gold { min-height:48px; width:100%; justify-content:center; }
+.inquiry-form button:disabled { opacity:.7; cursor:wait; }
+.inquiry-form .form-error { max-width:none; padding:14px; border:1px solid #e6a28e; border-radius:6px; background:#fbe7e0; color:#792b1c; font:400 14px/1.6 Manrope,Arial,sans-serif; margin:0; }
+.inquiry-form .form-success { max-width:none; padding:14px; border:1px solid #a1bc9a; border-radius:6px; background:#eaf2e7; color:#28512b; font:400 14px/1.6 Manrope,Arial,sans-serif; margin:0; }
+.inquiry-form .selected-models { max-width:none; overflow-wrap:anywhere; margin:0; padding:12px; border:1px solid #817b71; border-radius:6px; }
+.inquiry .field-label, .inquiry .form-hint { color:#171716; }
+.inquiry .consent { color:#49443d; }
+.product-actions { align-items:stretch; }
+.quote-add-group { display:flex; flex-direction:column; justify-content:center; }
+.quote-add { min-height:48px; display:inline-flex; align-items:center; justify-content:center; gap:8px; width:100%; }
+.quote-add:disabled { opacity:1; background:#e4eadf; color:#28512b; border:1px solid #899c81; cursor:default; }
+.product-intro h1 { overflow-wrap:anywhere; }
+.product-intro p { font-size:16px; line-height:1.7; }
+.product-page .crumb a, .models > div > a { display:inline-flex; align-items:center; min-height:44px; }
+.gallery-help { font:400 14px/1.7 Manrope,Arial,sans-serif; color:#5e5a53; }
+.gallery-help a { text-decoration:underline; text-underline-offset:3px; }
+.gallery-lightbox { box-sizing:border-box; width:100vw; height:100dvh; max-width:none; max-height:none; margin:0; border:0; color:#f7f3eb; }
+.gallery-lightbox > img { object-fit:contain; max-height:80dvh; }
+.gallery-lightbox > .icon-button { position:absolute; top:20px; right:20px; }
+.gallery-lightbox::backdrop { background:#171716e8; }
+.quote-list-page > section { padding-top:48px; }
+.quote-list-page h1 { font-size:clamp(32px,5vw,60px); line-height:1.15; }
+.quote-items h2 { font-size:22px; line-height:1.35; overflow-wrap:anywhere; }
+.quote-items button { min-height:44px; padding:10px 12px; }
+.empty-actions { display:flex; justify-content:center; align-items:stretch; flex-wrap:wrap; gap:16px; }
+.empty-actions a { min-height:48px; display:inline-flex; align-items:center; justify-content:center; }
+.continue-browsing { display:inline-flex; margin:16px; min-height:44px; align-items:center; text-decoration:underline; }
+@media(max-width:1100px) and (min-width:761px) {
+  .site-nav { padding-inline:20px !important; gap:12px; }
+  .site-nav nav, .lumenhaus-home .site-nav nav { gap:14px !important; }
+  .site-nav nav a, .lumenhaus-home .site-nav nav a { font-size:12px !important; }
+  .site-nav .brand, .lumenhaus-home .site-nav .brand { font-size:12px !important; }
+}
+@media(max-width:760px) {
+  footer { gap:20px !important; }
+  .footer-contact, .footer-social { gap:8px; }
+  .footer-copy { align-self:start; }
+  .site-nav, .lumenhaus-home .site-nav { height:72px !important; min-height:72px !important; padding:0 12px !important; gap:8px; }
+  .site-nav .brand, .lumenhaus-home .site-nav .brand { font-size:10px !important; letter-spacing:.04em; gap:6px; }
+  .site-nav .brand small { font-size:6px !important; left:16px; letter-spacing:.06em; top:30px !important; }
+  .site-nav .brand i { width:8px; height:8px; }
+  .site-nav .quote-button, .lumenhaus-home .site-nav .quote-button { font-size:11px !important; padding:0 8px !important; min-width:76px; gap:4px; }
+  .site-nav .nav-actions { gap:2px; }
+  .site-nav .nav-menu { display:inline-flex; }
+  .site-nav nav.open { top:100%; background:#f1eee8; color:#171716; padding:16px 24px !important; gap:8px !important; }
+  .site-nav nav.open a, .lumenhaus-home .site-nav nav.open a { color:#171716 !important; font:500 18px/1.4 Manrope,Arial,sans-serif !important; min-height:44px; display:flex; align-items:center; padding:8px !important; }
+  .lumenhaus-home .hero { height:auto !important; min-height:650px !important; }
+  .lumenhaus-home .hero-copy { padding-top:48px !important; padding-bottom:120px !important; width:100%; max-width:100%; }
+  .lumenhaus-home .hero-copy h1 { font-size:clamp(36px,11vw,46px) !important; line-height:1.08 !important; max-width:100%; }
+  .lumenhaus-home .hero-copy .hero-actions { flex-direction:column; align-items:stretch; gap:12px; width:100%; }
+  .lumenhaus-home .hero-copy .hero-actions a { width:100%; flex:none; }
+  .lumenhaus-home .hero-copy .hero-actions .text-link { border:1px solid #d5c6a8 !important; }
+  .archive-hero { padding:28px 24px 24px !important; }
+  .archive-hero h1 { font-size:32px !important; line-height:1.15; margin:12px 0 16px !important; }
+  .archive-hero p { font-size:14px; line-height:1.6; }
+  .archive-hero br { display:none; }
+  .archive-toolbar.interactive { display:grid; grid-template-columns:1fr; gap:10px; padding:12px 24px; }
+  .archive-toolbar.interactive .archive-tabs { display:none; }
+  .mobile-category { display:flex; gap:12px; align-items:center; color:#171716; font:500 14px Manrope,Arial,sans-serif; }
+  .mobile-category select { min-width:0; flex:1; min-height:44px; font-size:16px; padding:8px; background:#f5f2ec; color:#171716; border:1px solid #8e877d; border-radius:6px; }
+  .archive-live { display:block; padding:24px 24px 20px; scroll-margin-top:150px; }
+  .archive-live h2 { font-size:26px; }
+  .archive-live p { margin:8px 0 0; }
+  .archive-results { padding:0 24px 48px; }
+  .archive-results .archive-card > div { height:auto; aspect-ratio:1 / 1; }
+  .catalog-pagination { gap:12px; justify-content:space-between; }
+  .catalog-pagination button { min-width:80px; padding:10px; }
+  .contact-page .contact-hero { padding:28px 24px !important; }
+  .contact-page .contact-hero h1 { font-size:34px !important; max-width:100%; margin:12px 0 18px !important; }
+  .contact-page .contact-hero h1 br { display:none; }
+  .contact-page .contact-hero p { font-size:14px !important; line-height:1.6 !important; padding:0; border:0; }
+  .contact-form { padding:32px 24px; gap:24px; }
+  .contact-form h2 { font-size:28px; margin:12px 0 16px; }
+  .contact-form > div > p { font-size:14px; margin:0; }
+  .inquiry-form { gap:20px !important; }
+  .quote-list-page > section { padding:32px 24px; }
+  .quote-items article { grid-template-columns:64px minmax(0,1fr); gap:12px; }
+  .quote-items img { width:64px; height:80px; }
+  .quote-items button { grid-column:2; justify-self:start; }
+  .quote-items h2 { font-size:20px; }
+  .product-actions .quote-add-group { width:100%; }
+  .product-actions .quote-add { font-size:14px; }
+}
+@media(max-width:850px) {
+  .cms { display:block; min-height:100vh; }
+  .cms-side { position:sticky; top:0; z-index:10; min-height:0; padding:12px 16px 14px; display:flex; flex-direction:row; flex-wrap:wrap; align-items:center; gap:4px; }
+  .cms-side .brand { flex:1 0 100%; margin:0 0 8px; min-height:40px; }
+  .cms-side>button { flex:1 1 0; min-width:0; justify-content:center; font-size:0; padding:10px 4px; margin:0; }
+  .cms-side>button i { font-size:16px; }
+  .cms-side>button b { display:none; }
+  .cms-side .cms-profile { display:flex; flex:1 0 100%; margin:10px 0 0; padding:10px 4px 0; min-height:42px; }
+  .cms-side .cms-logout { flex:0 0 auto; font-size:12px; border-top:0 !important; margin:10px 0 0 !important; padding:10px 12px; }
+  .cms-content { padding:24px 16px 40px; }
+}
+@media(max-width:359px) {
+  .site-nav, .lumenhaus-home .site-nav { flex-wrap:wrap; height:auto !important; padding:8px 12px !important; gap:0; }
+  .site-nav .nav-actions { margin-left:auto; }
+}
+@media(prefers-reduced-motion:reduce) {
+  html { scroll-behavior:auto; }
+  .archive-card img { transition:none; }
+}
+.navigation-pending {
+  position: fixed;
+  top: auto;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  padding: 12px 20px;
+  border-radius: 4px;
+  background: #252722;
+  color: #fff;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+/* Final visual system: restrained editorial catalogue, with a quiet specification rail. */
+:root {
+  --lh-content: 1280px;
+  --lh-cream: #f3f0e9;
+  --lh-paper: #faf8f3;
+  --lh-ink: #191817;
+  --lh-gold: #c99a4c;
+  --lh-rule: rgba(25, 24, 23, .18);
+  --lh-muted: #68635b;
+}
+
+body { background: var(--lh-cream); }
+.lumenhaus-home { background: var(--lh-cream); overflow: clip; }
+
+.lumenhaus-home .site-nav {
+  height: 76px !important;
+  min-height: 76px !important;
+  padding-inline: max(28px, calc((100vw - var(--lh-content)) / 2)) !important;
+  background: var(--lh-ink) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, .16) !important;
+}
+.lumenhaus-home .site-nav nav { gap: clamp(18px, 2.3vw, 34px) !important; }
+.lumenhaus-home .site-nav nav a {
+  position: relative;
+  padding: 23px 0 !important;
+  color: #f7f3eb !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+}
+.lumenhaus-home .site-nav nav a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 17px;
+  left: 0;
+  height: 1px;
+  background: var(--lh-gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 160ms ease-out;
+}
+.lumenhaus-home .site-nav nav a:hover::after,
+.lumenhaus-home .site-nav nav a:focus-visible::after { transform: scaleX(1); }
+.lumenhaus-home .site-nav .quote-button {
+  min-height: 42px !important;
+  padding-inline: 18px !important;
+  background: var(--lh-gold) !important;
+  color: var(--lh-ink) !important;
+  font: 700 10px/1 Manrope, sans-serif !important;
+  letter-spacing: .06em;
+  box-shadow: none !important;
+}
+.lumenhaus-home .site-nav .quote-button:hover { background: #e0b266 !important; }
+
+.lumenhaus-home .hero {
+  height: clamp(600px, calc(100svh - 76px), 760px) !important;
+  min-height: 600px !important;
+  background: var(--lh-ink);
+}
+.lumenhaus-home .hero-art { background-position: center 44% !important; }
+.lumenhaus-home .hero-art::before {
+  background: linear-gradient(90deg, rgba(21, 19, 15, .94) 0%, rgba(21, 19, 15, .72) 24%, rgba(21, 19, 15, .18) 64%, rgba(21, 19, 15, .04) 100%);
+}
+.lumenhaus-home .hero-copy {
+  max-width: 670px;
+  margin-left: max(28px, calc((100vw - var(--lh-content)) / 2));
+  padding: clamp(92px, 13vh, 148px) 32px 90px 0 !important;
+}
+.lumenhaus-home .hero-copy h1 {
+  max-width: 10ch;
+  margin: 20px 0 26px !important;
+  font-size: clamp(3.6rem, 5.3vw, 6.1rem) !important;
+  line-height: .92 !important;
+  letter-spacing: -.06em;
+  text-wrap: balance;
+}
+.lumenhaus-home .hero-copy > p {
+  max-width: 43ch;
+  margin-bottom: 30px !important;
+  color: rgba(247, 243, 235, .78) !important;
+  font-size: .96rem !important;
+  line-height: 1.7 !important;
+}
+.lumenhaus-home .hero-copy .hero-actions { gap: 10px; }
+.lumenhaus-home .hero-copy .hero-actions a { min-height: 46px; padding-inline: 20px !important; }
+.lumenhaus-home .hero-copy .hero-actions .text-link {
+  border-color: rgba(247, 243, 235, .42) !important;
+  background: rgba(25, 24, 23, .18);
+}
+
+.lumenhaus-home .benefits {
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 0 !important;
+  padding: 0 max(28px, calc((100vw - var(--lh-content)) / 2)) !important;
+  background: var(--lh-paper) !important;
+  border-bottom: 1px solid var(--lh-rule) !important;
+}
+.lumenhaus-home .benefits article {
+  min-height: 158px;
+  padding: 32px 26px 30px !important;
+  background: transparent !important;
+  border-right: 1px solid var(--lh-rule);
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+.lumenhaus-home .benefits article:last-child { border-right: 0; }
+.lumenhaus-home .benefits b,
+.lumenhaus-home .eyebrow { color: var(--lh-gold) !important; font-size: 10px !important; letter-spacing: .16em; }
+.lumenhaus-home .benefits h3 { margin: 14px 0 10px !important; font: 500 1.08rem/1.15 'Playfair Display', serif !important; }
+.lumenhaus-home .benefits p { max-width: 25ch; color: var(--lh-muted) !important; font-size: .78rem !important; line-height: 1.55 !important; }
+
+.lumenhaus-home .catalogue {
+  padding-top: clamp(88px, 9vw, 132px) !important;
+  padding-bottom: clamp(96px, 10vw, 144px) !important;
+  background: var(--lh-cream) !important;
+}
+.lumenhaus-home .catalogue .section-heading { max-width: 800px; }
+.lumenhaus-home .catalogue .section-heading h2 {
+  max-width: 11ch;
+  margin: 18px 0 22px !important;
+  font-size: clamp(3rem, 5vw, 5.1rem) !important;
+  line-height: .96 !important;
+}
+.lumenhaus-home .catalogue .section-heading p { max-width: 52ch; color: var(--lh-muted) !important; font-size: .92rem !important; }
+.lumenhaus-home .filters {
+  margin: clamp(48px, 6vw, 76px) 0 34px !important;
+  padding: 15px 0 !important;
+  border-top: 1px solid var(--lh-ink);
+  border-bottom: 1px solid var(--lh-rule);
+}
+.lumenhaus-home .chips { gap: 7px !important; }
+.lumenhaus-home .chips button {
+  min-height: 38px !important;
+  padding: 0 13px !important;
+  border-color: var(--lh-rule) !important;
+  border-radius: 0 !important;
+  color: var(--lh-ink) !important;
+  font-size: 10px !important;
+  letter-spacing: .04em;
+}
+.lumenhaus-home .chips button.active { background: var(--lh-ink) !important; color: var(--lh-cream) !important; }
+.lumenhaus-home .grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 48px 20px !important; }
+.lumenhaus-home .product { border-top: 0; padding-top: 0; }
+.lumenhaus-home .product .photo,
+.lumenhaus-home .product:nth-child(3n + 2) .photo {
+  height: auto !important;
+  aspect-ratio: 4 / 5;
+  border-radius: 0 !important;
+  background: #ddd6c9;
+}
+.lumenhaus-home .product:nth-child(3n + 2) .photo { aspect-ratio: 5 / 6; }
+.lumenhaus-home .product:nth-child(3n) .photo { aspect-ratio: 1 / 1; }
+.lumenhaus-home .product .photo img { filter: saturate(.68) contrast(1.02); transition: transform 420ms cubic-bezier(.2, .7, .2, 1), filter 420ms ease; }
+.lumenhaus-home .product:hover .photo img { filter: saturate(.82) contrast(1.04); transform: scale(1.035); }
+.lumenhaus-home .product .photo::after { border: 0 !important; box-shadow: inset 0 0 0 1px rgba(25, 24, 23, .08); }
+.lumenhaus-home .product > p { margin: 16px 0 7px; color: var(--lh-gold) !important; font-size: 9px !important; letter-spacing: .12em; }
+.lumenhaus-home .product h3 { margin: 0 0 8px !important; font-size: 1.2rem !important; line-height: 1.15 !important; }
+.lumenhaus-home .product small { padding-top: 8px; border-top: 1px solid var(--lh-rule); color: var(--lh-muted) !important; font-size: 9px !important; letter-spacing: .04em; }
+
+.lumenhaus-home .custom,
+.lumenhaus-home .story,
+.lumenhaus-home .inquiry { width: 100%; margin: 0 !important; border-radius: 0 !important; }
+.lumenhaus-home .custom { padding-top: clamp(88px, 10vw, 136px) !important; padding-bottom: clamp(88px, 10vw, 136px) !important; background: #ded4c5 !important; }
+.lumenhaus-home .custom h2,
+.lumenhaus-home .story h2,
+.lumenhaus-home .inquiry h2 { max-width: 10ch; font-size: clamp(2.8rem, 4.5vw, 5rem) !important; line-height: .98 !important; }
+.lumenhaus-home .custom p,
+.lumenhaus-home .story p { max-width: 38ch; font-size: .92rem !important; line-height: 1.7 !important; }
+.lumenhaus-home .story { padding-top: clamp(88px, 10vw, 136px) !important; padding-bottom: clamp(88px, 10vw, 136px) !important; }
+.lumenhaus-home .story-stat strong { font-size: clamp(2.5rem, 4vw, 4.2rem); }
+.lumenhaus-home .inquiry { margin-bottom: 0 !important; padding-top: clamp(88px, 10vw, 136px) !important; padding-bottom: clamp(88px, 10vw, 136px) !important; background: var(--lh-paper) !important; }
+.lumenhaus-home .inquiry form { gap: 14px !important; }
+.lumenhaus-home .inquiry input,
+.lumenhaus-home .inquiry textarea { border-radius: 0 !important; border-color: var(--lh-rule) !important; background: transparent !important; }
+.lumenhaus-home .inquiry form .gold { min-height: 48px; padding-inline: 24px !important; }
+
+@media (max-width: 1100px) and (min-width: 761px) {
+  .lumenhaus-home .site-nav nav { gap: 18px !important; }
+  .lumenhaus-home .site-nav nav a { font-size: 11px !important; }
+  .lumenhaus-home .hero-copy { margin-left: 28px; }
+  .lumenhaus-home .benefits article { padding-inline: 18px !important; }
+}
+
+@media (max-width: 760px) {
+  .lumenhaus-home .site-nav { height: 68px !important; min-height: 68px !important; padding-inline: 16px !important; }
+  .lumenhaus-home .site-nav .brand { font-size: 11px !important; }
+  .lumenhaus-home .site-nav .quote-button { min-width: 82px; padding-inline: 11px !important; }
+  .lumenhaus-home .site-nav nav.open { padding: 14px 20px !important; }
+  .lumenhaus-home .hero { min-height: 0 !important; height: auto !important; display: grid; grid-template-rows: minmax(480px, 66svh) 300px; }
+  .lumenhaus-home .hero-art { grid-row: 1; min-height: 0; background-position: 60% center !important; }
+  .lumenhaus-home .hero-copy { grid-row: 1; align-self: end; margin: 0; max-width: none; padding: 72px 24px 82px !important; }
+  .lumenhaus-home .hero-copy h1 { max-width: 9ch; margin: 16px 0 22px !important; font-size: clamp(3rem, 14vw, 4.35rem) !important; }
+  .lumenhaus-home .hero-copy > p { max-width: 34ch; font-size: .9rem !important; }
+  .lumenhaus-home .hero-copy .hero-actions { width: min(100%, 360px); }
+  .lumenhaus-home .hero-copy .hero-actions a { width: auto; }
+  .lumenhaus-home .hero-carousel-controls { bottom: 20px; right: 20px; }
+  .lumenhaus-home .benefits { grid-template-columns: 1fr !important; padding: 0 !important; }
+  .lumenhaus-home .benefits article { min-height: 0; padding: 25px 24px 27px !important; border-right: 0; border-bottom: 1px solid var(--lh-rule); }
+  .lumenhaus-home .benefits article:last-child { border-bottom: 0; }
+  .lumenhaus-home .catalogue,
+  .lumenhaus-home .custom,
+  .lumenhaus-home .story,
+  .lumenhaus-home .inquiry { padding-inline: 24px !important; }
+  .lumenhaus-home .catalogue { padding-top: 78px !important; padding-bottom: 88px !important; }
+  .lumenhaus-home .catalogue .section-heading h2 { font-size: clamp(2.8rem, 13vw, 4rem) !important; }
+  .lumenhaus-home .filters { margin-top: 42px !important; }
+  .lumenhaus-home .grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 38px 12px !important; }
+  .lumenhaus-home .product .photo,
+  .lumenhaus-home .product:nth-child(3n + 2) .photo,
+  .lumenhaus-home .product:nth-child(3n) .photo { aspect-ratio: 4 / 5; }
+  .lumenhaus-home .product h3 { font-size: 1.05rem !important; }
+  .lumenhaus-home .product small { display: block; line-height: 1.5; }
+  .lumenhaus-home .custom,
+  .lumenhaus-home .story,
+  .lumenhaus-home .inquiry { padding-top: 78px !important; padding-bottom: 78px !important; }
+  .lumenhaus-home .custom h2,
+  .lumenhaus-home .story h2,
+  .lumenhaus-home .inquiry h2 { font-size: clamp(2.7rem, 13vw, 4rem) !important; }
+  .lumenhaus-home .story-stat { grid-template-columns: repeat(3, 1fr) !important; gap: 12px !important; }
+  .lumenhaus-home .story-stat strong { font-size: 2.25rem; }
+  .lumenhaus-home .inquiry form .gold { width: 100%; }
+}
+
+@media (max-width: 420px) {
+  .lumenhaus-home .hero-copy .hero-actions { width: 100%; flex-direction: column; align-items: stretch; }
+  .lumenhaus-home .hero-copy .hero-actions a { width: 100%; }
+  .lumenhaus-home .grid { grid-template-columns: 1fr !important; gap: 42px !important; }
+  .lumenhaus-home .product .photo,
+  .lumenhaus-home .product:nth-child(3n + 2) .photo,
+  .lumenhaus-home .product:nth-child(3n) .photo { aspect-ratio: 5 / 6; }
+}
+.navigation-pending:empty { display: none; }
+.product-highlights{padding:0;margin:24px 0;list-style:none;display:grid;gap:9px;font-size:12px;line-height:1.5}.product-highlights li{display:flex;gap:10px}.product-highlights li:before{content:"＋";color:var(--gold);font:14px 'DM Mono';line-height:1}
+.product-applications{padding:96px clamp(24px,8vw,130px);background:#f0ebe3}.product-applications h2,.product-faq h2,.product-quote h2{font-size:clamp(34px,4vw,52px);max-width:600px}.product-applications>div{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:36px}.product-applications span:not(.eyebrow){border-top:1px solid var(--line);padding-top:15px;font:12px 'DM Mono';color:var(--muted)}.product-faq{padding:96px clamp(24px,20vw,330px)}.product-faq details{border-top:1px solid var(--line);padding:18px 0}.product-faq details:last-child{border-bottom:1px solid var(--line)}.product-faq summary{cursor:pointer;font:500 19px 'Playfair Display';list-style:none}.product-faq summary::-webkit-details-marker{display:none}.product-faq summary:after{content:"＋";float:right;font:14px 'DM Mono';color:var(--gold)}.product-faq details[open] summary:after{content:"－"}.product-faq p{max-width:620px;margin:13px 0 0;font-size:13px;line-height:1.8;color:var(--muted)}.product-quote{padding:86px clamp(24px,8vw,130px);display:flex;align-items:end;justify-content:space-between;gap:30px;background:var(--ink);color:var(--cream)}.product-quote p{max-width:430px;color:#b9b4ab;font-size:13px;line-height:1.8}
+@media(max-width:760px){.product-applications,.product-faq{padding:70px 28px}.product-applications>div{grid-template-columns:1fr 1fr;gap:25px 14px}.product-quote{padding:70px 28px;display:grid;align-items:start}}

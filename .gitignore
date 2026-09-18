@@ -5,8 +5,15 @@ dist/
 .env
 .env.*
 !.env.example
+.server-access/
 *.log
 coverage/
 .DS_Store
 Thumbs.db
 
+# Runtime database and local test artifacts
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+.test-data/
+.backend-test/

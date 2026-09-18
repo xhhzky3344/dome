@@ -1,16 +1,73 @@
-import { NextResponse } from "next/server";
-import { promises as fs } from "node:fs";
-import path from "node:path";
-import { forbidden, isAdmin } from "../../../lib/auth";
-import type { SiteSettings } from "../../../lib/settings";
-const file=path.join(process.cwd(),"data","site-settings.json");
-export async function GET(){return NextResponse.json(JSON.parse(await fs.readFile(file,"utf8")))}
-export async function PUT(request:Request){
-  if(!await isAdmin())return forbidden();
-  const data = await request.json() as SiteSettings;
-  if (data.heroSlides && (!Array.isArray(data.heroSlides) || data.heroSlides.length !== 3)) {
-    return NextResponse.json({ error: "Homepage carousel requires exactly three slides." }, { status: 400 });
-  }
-  await fs.writeFile(file,JSON.stringify(data,null,2));
-  return NextResponse.json(data);
+import { requireAdmin } from "../../../lib/auth";
+import { get, put, type RecordData } from "../../../lib/db";
+import {
+  api,
+  body,
+  requireValue,
+  safeUrl,
+  sameOrigin,
+  str,
+} from "../../../lib/http";
+export function GET() {
+  return api(() => get("settings", "site"));
+}
+export function PUT(request: Request) {
+  return api(async () => {
+    sameOrigin(request);
+    await requireAdmin();
+    const data = await body(request);
+    const allowed = [
+      "companyName",
+      "companyNameZh",
+      "email",
+      "phone",
+      "address",
+      "facebookUrl",
+      "whatsappUrl",
+      "instagramUrl",
+      "linkedinUrl",
+      "primaryLanguage",
+      "secondaryLanguage",
+      "seoTitle",
+      "seoDescription",
+      "seoTitleZh",
+      "seoDescriptionZh",
+      "brandIntroduction",
+    ];
+    const saved: RecordData = { ...get("settings", "site")!, id: "site" };
+    for (const key of allowed)
+      if (key in data) {
+        saved[key] = str(data[key], key, 10000, true);
+        if (key.endsWith("Url") && saved[key]) safeUrl(saved[key]);
+      }
+    if (data.heroSlides !== undefined) {
+      requireValue(
+        Array.isArray(data.heroSlides) && data.heroSlides.length === 3,
+        "首页轮播需要三张幻灯片",
+      );
+      saved.heroSlides = data.heroSlides.map((raw) => {
+        requireValue(raw && typeof raw === "object", "轮播格式错误");
+        const slide: Record<string, unknown> = {};
+        for (const key of [
+          "id",
+          "eyebrow",
+          "eyebrowZh",
+          "title",
+          "titleZh",
+          "description",
+          "descriptionZh",
+          "primaryLabel",
+          "primaryLabelZh",
+          "secondaryLabel",
+          "secondaryLabelZh",
+        ])
+          slide[key] = str(raw[key], key, 3000, true);
+        for (const key of ["image", "primaryHref", "secondaryHref"])
+          slide[key] = safeUrl(raw[key]);
+        slide.published = raw.published !== false;
+        return slide;
+      });
+    }
+    return put("settings", saved);
+  });
 }

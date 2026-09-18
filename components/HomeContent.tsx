@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { CSSProperties, FormEvent, useEffect, useMemo, useState } from "react";
+import { CSSProperties, useEffect, useMemo, useState } from "react";
+import { InquiryForm } from "./InquiryForm";
+import { productPrice } from "../lib/product-copy";
 import type { HeroSlide } from "../lib/settings";
 import { categoryZh, useLocale } from "./Locale";
 
@@ -21,17 +23,17 @@ type Product = {
 const fallbackSlide: HeroSlide = {
   id: "fallback",
   image: "/images/lumenhaus-panorama-hero-v2.webp",
-  eyebrow: "DECORATIVE LIGHTING · B2B PROJECT SUPPLY",
-  eyebrowZh: "装饰灯具 · B2B 项目供应",
-  title: "Aster glass pendants\nfor generous,\narchitectural interiors.",
-  titleZh: "Aster 系列吊灯，\n为高挑空间\n而造。",
-  description: "A sculptural glass pendant collection for hospitality and residential interiors.",
-  descriptionZh: "为酒店、餐饮、别墅及商业空间提供装饰照明。",
-  primaryLabel: "Explore all products",
-  primaryLabelZh: "浏览全部产品",
+  eyebrow: "DECORATIVE LIGHTING · WHOLESALE & PROJECTS",
+  eyebrowZh: "装饰灯具 · 批发与工程项目",
+  title: "A considered range\nfor spaces that\nneed character.",
+  titleZh: "一套有分寸的灯具，\n为真正的空间项目\n而设计。",
+  description: "Decorative lighting with clear specifications, repeatable finishes and project-ready support.",
+  descriptionZh: "清晰规格、稳定工艺与项目支持，让装饰灯具更容易被选型、采购与落地。",
+  primaryLabel: "Browse product series",
+  primaryLabelZh: "浏览产品系列",
   primaryHref: "/products",
-  secondaryLabel: "Start a project",
-  secondaryLabelZh: "发起项目",
+  secondaryLabel: "Request a quote",
+  secondaryLabelZh: "获取项目报价",
   secondaryHref: "/contact",
   published: true,
 };
@@ -40,12 +42,10 @@ export function HomeContent({ products, slides }: { products: Product[]; slides:
   const { locale } = useLocale();
   const chinese = locale === "zh";
   const [filter, setFilter] = useState("All");
-  const [notice, setNotice] = useState("");
-  const [sending, setSending] = useState(false);
   const [slideIndex, setSlideIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const heroSlides = slides.length ? slides : [fallbackSlide];
-  const featured = products.filter((product) => product.featured);
+  const featured = products.slice(0, 8);
   const categories = [
     "All",
     ...Array.from(new Set(featured.map((product) => product.category))),
@@ -73,79 +73,45 @@ export function HomeContent({ products, slides }: { products: Product[]; slides:
     }, 6500);
     return () => window.clearInterval(timer);
   }, [heroSlides.length, paused]);
-  async function sendInquiry(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    if (sending) return;
-    const form = event.currentTarget;
-    setSending(true);
-    setNotice("");
-    try {
-      const response = await fetch("/api/inquiries", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(Object.fromEntries(new FormData(form))),
-      });
-      if (response.ok) {
-        form.reset();
-        setNotice(chinese ? "询盘已发送。" : "Inquiry sent.");
-      } else
-        setNotice(
-          chinese
-            ? "发送失败，请稍后重试。"
-            : "Unable to send inquiry. Please try again.",
-        );
-    } catch {
-      setNotice(
-        chinese
-          ? "网络连接失败，请稍后重试。"
-          : "Network error. Please try again.",
-      );
-    } finally {
-      setSending(false);
-    }
-  }
+
   const copy = chinese
     ? {
-        eyebrow: "装饰灯具 · B2B 项目供应",
+        eyebrow: "装饰灯具 · 批发与工程项目",
         hero: (
           <>
-            Aster 系列吊灯，
+            一套有分寸的灯具，
             <br />
-            为高挑空间
+            为真正的空间项目
             <br />
-            <i>而造。</i>
+            <i>而设计。</i>
           </>
         ),
-        lead: "以雕塑感玻璃、精密金属结构和可扩展的尺寸方案，为酒店、餐饮、别墅及商业空间提供装饰照明。",
-        explore: "浏览全部产品",
-        start: "发起项目",
+        lead: "清晰规格、稳定工艺与项目支持，让装饰灯具更容易被选型、采购与落地。",
+        explore: "浏览产品系列",
+        start: "获取项目报价",
         supply: "批发供货",
-        supplyText: "为设计师、零售商与承包商提供清晰的产品资料。",
-        bespoke: "定制开发",
-        bespokeText: "根据项目调整尺寸、表面工艺与结构。",
-        guidance: "项目协同",
-        guidanceText: "从项目简报到包装发运，全程协同。",
-        factory: "工厂服务",
-        factoryText: "清晰沟通、稳定品控与适配出口运输的包装方案。",
-        collection: "精选产品系列",
-        pieces: "安静，却自有存在感。",
-        catalog: "按分类浏览原创产品系列，或进入完整目录查看规格。",
+        supplyText: "面向设计师、零售商与承包商，提供清晰的型号与价格信息。",
+        bespoke: "尺寸与表面",
+        bespokeText: "根据空间和数量调整尺寸、材质与表面处理。",
+        guidance: "项目配合",
+        guidanceText: "从选型、打样到包装发运，保持沟通清晰。",
+        factory: "稳定交付",
+        factoryText: "以可重复的工艺和出口包装支持持续采购。",
+        collection: "产品系列 · 06 个精选型号",
+        pieces: "先从适合项目的系列开始。",
+        catalog: "按灯具类型筛选，快速查看型号、价格与产品详情。",
         all: "全部",
         view: "查看产品",
-        custom: "灯具定制服务",
+        custom: "项目定制服务",
         customTitle: (
           <>
-            从一个灵感火花，到
+            从一个项目需求，到
             <br />
-            <i>完整的光影氛围。</i>
+            <i>可执行的灯具规格。</i>
           </>
         ),
         customText:
-          "提供参考图、平面图或材质方向，我们会协助完善适合量产和安装的规格。",
-        story: "我们的观点",
-        storyTitle: "为余晖而造。",
-        storyText:
-          "我们相信，装饰光应该留下痕迹：更温暖的迎接、更柔和的夜晚，以及一个值得抬头凝望的细节。",
+          "提供参考图、平面图或材质方向，我们协助把想法整理成适合打样、量产与安装的规格。",
         inquiry: "项目询盘",
         tell: (
           <>
@@ -161,48 +127,44 @@ export function HomeContent({ products, slides }: { products: Product[]; slides:
         send: "发送询盘 ↗",
       }
     : {
-        eyebrow: "DECORATIVE LIGHTING · B2B PROJECT SUPPLY",
+        eyebrow: "DECORATIVE LIGHTING · WHOLESALE & PROJECTS",
         hero: (
           <>
-            Aster glass pendants
+            A considered range
             <br />
-            for generous,
+            for spaces that
             <br />
-            <i>architectural interiors.</i>
+            <i>need character.</i>
           </>
         ),
-        lead: "A sculptural glass pendant collection with precise metalwork and scalable configurations for hospitality, dining, villa and commercial interiors.",
-        explore: "Explore all products",
-        start: "Start a project",
+        lead: "Decorative lighting with clear specifications, repeatable finishes and project-ready support.",
+        explore: "Browse product series",
+        start: "Request a quote",
         supply: "Wholesale supply",
         supplyText:
-          "Clear product information for designers, retailers and contractors.",
-        bespoke: "Bespoke development",
-        bespokeText: "Finish, scale and structure adapted to your project.",
-        guidance: "Project guidance",
-        guidanceText: "From initial brief through packing and dispatch.",
-        factory: "Factory service",
+          "Clear model and price information for designers, retailers and contractors.",
+        bespoke: "Scale & finish",
+        bespokeText: "Dimensions, materials and finishes adapted to your project.",
+        guidance: "Project support",
+        guidanceText: "From selection and sampling through packing and dispatch.",
+        factory: "Reliable delivery",
         factoryText:
-          "Clear communication, dependable quality control and export-ready packing.",
-        collection: "FEATURED COLLECTION",
-        pieces: "Pieces with a quiet presence.",
+          "Repeatable workmanship and export-ready packing for ongoing supply.",
+        collection: "PRODUCT SERIES · 06 FEATURED MODELS",
+        pieces: "Start with a focused range for real interiors.",
         catalog:
-          "Browse original product series by category, then open the complete catalogue for specifications.",
+          "Filter by lighting type to compare models, starting prices and product details.",
         all: "All",
         view: "View piece",
-        custom: "BESPOKE LIGHTING SERVICE",
+        custom: "PROJECT CUSTOMIZATION",
         customTitle: (
           <>
-            From a spark of an idea to a<br />
-            <i>finished atmosphere.</i>
+            From a project brief to a<br />
+            <i>production-ready specification.</i>
           </>
         ),
         customText:
-          "Share a reference, plan or material direction. We help shape a specification suitable for repeatable production and installation.",
-        story: "OUR POINT OF VIEW",
-        storyTitle: "Made for the afterglow.",
-        storyText:
-          "We believe decorative light should leave a trace: a warmer welcome, a softer evening, a detail worth looking up for.",
+          "Share a reference, plan or material direction. We help shape a specification suitable for sampling, repeatable production and installation.",
         inquiry: "PROJECT INQUIRY",
         tell: (
           <>
@@ -225,7 +187,7 @@ export function HomeContent({ products, slides }: { products: Product[]; slides:
           <span className="eyebrow">{chinese ? currentSlide.eyebrowZh : currentSlide.eyebrow}</span>
           <h1 className="hero-title">{chinese ? currentSlide.titleZh : currentSlide.title}</h1>
           <p>{chinese ? currentSlide.descriptionZh : currentSlide.description}</p>
-          <div>
+          <div className="hero-actions">
             <Link className="gold" href={currentSlide.primaryHref}>
               {chinese ? currentSlide.primaryLabelZh : currentSlide.primaryLabel}
             </Link>
@@ -292,7 +254,7 @@ export function HomeContent({ products, slides }: { products: Product[]; slides:
               key={product.id}
             >
               <div className="photo">
-                <img src={product.image} alt={name(product)} />
+                <img loading="lazy" decoding="async" src={product.image} alt={name(product)} />
                 <span>{copy.view} ↗</span>
               </div>
               <p>
@@ -303,7 +265,7 @@ export function HomeContent({ products, slides }: { products: Product[]; slides:
               <h3>{name(product)}</h3>
               <small>
                 {product.model}
-                <b>{product.price}</b>
+                <b>{productPrice(product.price, locale)}</b>
               </small>
             </Link>
           ))}
@@ -321,38 +283,11 @@ export function HomeContent({ products, slides }: { products: Product[]; slides:
           </Link>
         </div>
       </section>
-      <section className="story">
-        <div className="story-stat">
-          <strong>1998</strong>
-          <span>{chinese ? "创立" : "established"}</span>
-          <strong>24</strong>
-          <span>{chinese ? "工艺专家" : "craft specialists"}</span>
-          <strong>420</strong>
-          <span>{chinese ? "年度项目简报" : "annual project briefs"}</span>
-        </div>
-        <div>
-          <span className="eyebrow">{copy.story}</span>
-          <h2>{copy.storyTitle}</h2>
-          <p>{copy.storyText}</p>
-        </div>
-      </section>
       <section className="inquiry">
         <span className="eyebrow">{copy.inquiry}</span>
         <h2>{copy.tell}</h2>
-        <form onSubmit={sendInquiry}>
-          <input required name="name" placeholder={copy.name} />
-          <input required name="email" type="email" placeholder={copy.email} />
-          <input name="company" placeholder={copy.company} />
-          <textarea required name="message" placeholder={copy.message} />
-          <button className="gold">{copy.send}</button>
-        </form>
+        <InquiryForm />
       </section>
-      {notice && (
-        <div className="toast">
-          {notice}
-          <button onClick={() => setNotice("")}>×</button>
-        </div>
-      )}
     </>
   );
 }

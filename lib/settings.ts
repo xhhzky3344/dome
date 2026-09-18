@@ -1,5 +1,5 @@
-import { promises as fs } from "node:fs";
-import path from "node:path";
+import { get } from "./db";
+
 
 export type HeroSlide = {
   id: string;
@@ -25,6 +25,10 @@ export type SiteSettings = {
   email?: string;
   phone?: string;
   address?: string;
+  facebookUrl?: string;
+  whatsappUrl?: string;
+  instagramUrl?: string;
+  linkedinUrl?: string;
   primaryLanguage?: string;
   secondaryLanguage?: string;
   seoTitle?: string;
@@ -34,10 +38,10 @@ export type SiteSettings = {
   heroSlides?: HeroSlide[];
 };
 
-const file = path.join(process.cwd(), "data", "site-settings.json");
+
 
 export async function getSiteSettings(): Promise<SiteSettings> {
-  return JSON.parse(await fs.readFile(file, "utf8")) as SiteSettings;
+  return get("settings", "site") as SiteSettings;
 }
 
 export function getPublishedHeroSlides(settings: SiteSettings): HeroSlide[] {
